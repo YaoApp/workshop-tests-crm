@@ -1,0 +1,29 @@
+{
+  "FROM": "@yaoapp/workshop-tests-erp/models.user",
+  "RUN": {
+    "DELETE": ["columns.1", "columns.2", "columns.3"] // "user_id", "open_id", "union_id"
+  },
+  "columns": [
+    {
+      "label": "Gender",
+      "comment": "Gender",
+      "name": "gender",
+      "type": "enum",
+      "default": "unknown",
+      "option": ["boy", "girl", "unknown"],
+      "index": true,
+      "validations": [
+        {
+          "method": "typeof",
+          "args": ["string"],
+          "message": "{{input}} Error, {{label}} should be string"
+        },
+        {
+          "method": "enum",
+          "args": ["boy", "girl", "unknown"],
+          "message": "{{input}} Error, {{label}} should be boy/girl/unknown"
+        }
+      ]
+    }
+  ]
+}
