@@ -1,7 +1,7 @@
 {
   "LANG": "1.0.0",
   "VERSION": "1.0.0",
-  "FROM": "@yaoapp/workshop-tests-erp/models.user",
+  "FROM": "@github.com/yaoapp/workshop-tests-erp/models.user",
   "RUN": {
     "DELETE": ["columns.1", "columns.2", "columns.3"] // "user_id", "open_id", "union_id"
   },
